@@ -7,7 +7,6 @@ function App() {
   let [disbly, setDisbly] = useState("");
   function disblyFun(num: string) {
     if (disbly.includes("=")) {
-      console.log("hamza alkalb")
       disbly = ""
       setDisbly(disbly)
 
@@ -35,7 +34,7 @@ function App() {
     <div className="calculator">
       <div className="display">{disbly}</div>
       <div className="buttons">
-        {numbers.map((val) => <MyButton num={val} onClick={() => disblyFun(val)} ></MyButton>)}
+        {numbers.map((val , index) => <MyButton key={index} num={val} onClick={() => disblyFun(val)} ></MyButton>)}
         <button onClick={() => disblyFun("+")} className="operator">+</button>
         <button onClick={() => disblyFun("-")} className="operator">-</button>
         <button onClick={oreration} className="equals">=</button>
